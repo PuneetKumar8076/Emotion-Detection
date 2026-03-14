@@ -1,10 +1,13 @@
+"""Emotion Detection Flask Server"""
+
 from flask import Flask, request
-from EmotionDetection import emotion_detector
+from EmotionDetection.emotion_detection import emotion_detector
 
 app = Flask(__name__)
 
-@app.route("/emotionDetector")
+@app.route('/emotionDetector')
 def detect_emotion():
+    """Analyze text emotion using Watson NLP"""
 
     text = request.args.get('textToAnalyze')
 
